@@ -3,33 +3,33 @@ import React from 'react';
 class ChildComponent extends React.Component {
     //re-render
     state = {
-        showJobs: false
+        showPosts: false
     }
 
     handleShowHide = () => {
         this.setState({
-            showJobs: !this.state.showJobs
+            showPosts: !this.state.showPosts
         })
     }
     render() {
-        let { arrJobs } = this.props;
-        let { showJobs } = this.state;
-        let check = showJobs === true ? 'showJobs = true' : 'showJobs = false';
+        let { arrPost } = this.props;
+        let { showPosts } = this.state;
+        let check = showPosts === true ? 'showPosts = true' : 'showPosts = false';
         console.log('>>> check conditional: ', check)
         return (
             <>
-                {showJobs === false ?
+                {showPosts === false ?
                     <div>
                         <button onClick={() => this.handleShowHide()}>Show</button>
                     </div>
                     :
                     <>
-                        <div className="job-lists">
+                        <div className="post-lists">
                             {
-                                arrJobs.map((item, index) => {
+                                arrPost.map((item, index) => {
                                     return (
-                                        <div key={item.id}>
-                                            {item.title} - {item.salary}
+                                        <div key={item.postID}>
+                                            {item.postTopic} - {item.postData}
                                         </div>
                                     )
                                 })

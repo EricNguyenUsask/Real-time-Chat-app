@@ -3,55 +3,55 @@ import React from 'react';
 class AddComponent extends React.Component {
 
     state = {
-        title: '',
-        salary: '',
+        postTopic: '',
+        postData: '',
     }
-    handleChangeTitleJob = (event) => {
+    handleChangeTopic = (event) => {
         this.setState({
-            title: event.target.value
+            postTopic: event.target.value
         })
     }
-    handleChangeLastName = (event) => {
+    handleChangeData = (event) => {
         this.setState({
-            salary: event.target.value
+            postData: event.target.value
         })
     }
 
 
     handleSubmit = (event) => {
         event.preventDefault()
-        if (!this.state.title || !this.state.salary) {
+        if (!this.state.postTopic || !this.state.postData) {
             alert('Missing required params')
             return;
         }
         console.log('>>> check data input: ', this.state)
-        this.props.addNewJob({
-            id: Math.floor(Math.random() * 1001),
-            title: this.state.title,
-            salary: this.state.salary
+        this.props.addNewPost({
+            postID: Math.floor(Math.random() * 1001),
+            postTopic: this.state.postTopic,
+            postData: this.state.postData
         })
 
         this.setState({
-            title: '',
-            salary: ''
+            postTopic: '',
+            postData: ''
         })
     }
 
     render() {
         return (
             <form>
-                <label htmlFor="fname">Job's title:</label><br />
+                <label htmlFor="fname">postTopic:</label><br />
                 <input
                     type="text"
-                    value={this.state.title}
-                    onChange={(event) => this.handleChangeTitleJob(event)}
+                    value={this.state.postTopic}
+                    onChange={(event) => this.handleChangeTopic(event)}
                 />
                 <br />
-                <label htmlFor="lname">Salary:</label><br />
+                <label htmlFor="lname">postData:</label><br />
                 <input
                     type="text"
-                    value={this.state.salary}
-                    onChange={(event) => this.handleChangeLastName(event)}
+                    value={this.state.postData}
+                    onChange={(event) => this.handleChangeData(event)}
 
                 /><br /><br />
                 <input type="submit"

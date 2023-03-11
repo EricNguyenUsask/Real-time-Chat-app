@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ChildComponent from './ChildComponent';
 import AddComponent from './AddComponent';
@@ -7,15 +8,14 @@ class MyComponent extends React.Component {
 
     //key:value
     state = {
-        arrJobs: [
+        arrPost: [
         ]
     }
 
 
-    addNewJob = (job) => {
-        console.log('check job from parent: ', job)
+    addNewPost = (post) => {
         this.setState({
-            arrJobs: [...this.state.arrJobs, job]
+            arrPost: [...this.state.arrPost, post]
         })
 
     }
@@ -25,12 +25,12 @@ class MyComponent extends React.Component {
         return (
             <>
                 <AddComponent
-                    addNewJob={this.addNewJob}
+                    addNewPost={this.addNewPost}
                 />
 
 
                 <ChildComponent
-                    arrJobs={this.state.arrJobs}
+                    arrPost={this.state.arrPost}
                 />
 
 

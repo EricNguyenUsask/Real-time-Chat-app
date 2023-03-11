@@ -1,30 +1,23 @@
-import React from 'react';
-import ChildComponent from './ChildComponent';
+import React from "react";
+import ChildComponent from "./ChildComponent";
 
 class ShowComponent extends React.Component {
+  state = {
+    arrPost: [],
+  };
+  addNewPost = (post) => {
+    this.setState({
+      arrPost: [...this.state.arrPost, post],
+    });
+  };
 
-    state = {
-        arrJobs: [
-        ]
-    }
-    addNewJob = (job) => {
-        console.log('check job from parent: ', job)
-        this.setState({
-            arrJobs: [...this.state.arrJobs, job]
-        })
-
-    }
-    render() {
-        return (
-            <>
-                <ChildComponent
-                    arrJobs={this.state.arrJobs}
-                />
-            </>
-        )
-
-    }
+  render() {
+    return (
+      <>
+        <ChildComponent arrPost={this.state.arrPost} />
+      </>
+    );
+  }
 }
-
 
 export default ShowComponent;
