@@ -3,14 +3,14 @@ import AddComponent from "./AddComponent";
 import ChildComponent from "./ChildComponent";
 
 class ShowComponent extends AddComponent {
-//   state = {
-//     arrPost: [],
-//   };
-//   addNewPost = (post) => {
-//     this.setState({
-//       arrPost: [...this.state.arrPost, post],
-//     });
-//   };
+  state = {
+    arrPost: [],
+  };
+  addNewPost = (post) => {
+    this.setState({
+      arrPost: [...this.state.arrPost, post],
+    });
+  };
 
   render() {
     return (
