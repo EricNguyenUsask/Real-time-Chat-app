@@ -1,6 +1,5 @@
-import React from 'react';
-import MyComponent from '../Example/MyComponent.js';
-
+import React from "react";
+import MyComponent from "../Example/MyComponent.js";
 
 const CreatePost = () => {
   return (

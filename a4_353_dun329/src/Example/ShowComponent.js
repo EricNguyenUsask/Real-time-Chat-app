@@ -1,6 +1,6 @@
 import React from "react";
 import AddComponent from "./AddComponent";
-import ChildComponent from "./ChildComponent";
+import ListComponent from "./ListComponent";
 
 class ShowComponent extends AddComponent {
   state = {
@@ -15,7 +15,7 @@ class ShowComponent extends AddComponent {
   render() {
     return (
       <>
-        <ChildComponent arrPost={this.state.arrPost} />
+        <ListComponent arrPost={this.state.arrPost} />
       </>
     );
   }

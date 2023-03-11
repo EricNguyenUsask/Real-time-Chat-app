@@ -1,43 +1,29 @@
-
-import React from 'react';
-import ChildComponent from './ChildComponent';
-import AddComponent from './AddComponent';
+import React from "react";
+import ListComponent from "./ListComponent";
+import AddComponent from "./AddComponent";
 
 class MyComponent extends React.Component {
+  //key:value
+  state = {
+    arrPost: [],
+  };
 
+  addNewPost = (post) => {
+    this.setState({
+      arrPost: [...this.state.arrPost, post],
+    });
+  };
 
-    //key:value
-    state = {
-        arrPost: [
-        ]
-    }
+  render() {
+    console.log(">>> call render: ", this.state);
+    return (
+      <>
+        <AddComponent addNewPost={this.addNewPost} />
 
-
-    addNewPost = (post) => {
-        this.setState({
-            arrPost: [...this.state.arrPost, post]
-        })
-
-    }
-
-    render() {
-        console.log('>>> call render: ', this.state)
-        return (
-            <>
-                <AddComponent
-                    addNewPost={this.addNewPost}
-                />
-
-
-                <ChildComponent
-                    arrPost={this.state.arrPost}
-                />
-
-
-            </>
-        )
-
-    }
+        <ListComponent arrPost={this.state.arrPost} />
+      </>
+    );
+  }
 }
 
 export default MyComponent;

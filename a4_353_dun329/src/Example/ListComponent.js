@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ChildComponent extends React.Component {
+class ListComponent extends React.Component {
     //re-render
     state = {
         showPosts: false
@@ -49,4 +49,4 @@ class ChildComponent extends React.Component {
 }
 
 
-export default ChildComponent;
+export default ListComponent;
