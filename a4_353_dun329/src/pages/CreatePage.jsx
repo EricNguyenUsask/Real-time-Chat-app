@@ -1,11 +1,11 @@
 import React from "react";
-import MyComponent from "../Example/MyComponent.js";
+import AddComponent from '../Example/AddComponent'
 
 const CreatePost = () => {
   return (
     <div>
       <h3>Create post</h3>
-      <MyComponent />
+      <AddComponent />
     </div>
   );
 };

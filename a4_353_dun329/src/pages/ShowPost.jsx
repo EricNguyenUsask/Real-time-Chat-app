@@ -1,13 +1,11 @@
 import React from 'react';
-
-import ShowComponent from '../Example/ShowComponent.js';
+import ListComponent from '../Example/ListComponent';
 
 const ShowPost = () => {
   return (
     <div>
       <h3>show existed post</h3>
-      <ShowComponent />
-
+      <ListComponent />
     </div>
   );
 };
