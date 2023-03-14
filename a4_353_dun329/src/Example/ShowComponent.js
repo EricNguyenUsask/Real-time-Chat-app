@@ -16,6 +16,7 @@ class ShowComponent extends AddComponent {
     return (
       <>
         <ListComponent arrPost={this.state.arrPost} />
+
       </>
     );
   }

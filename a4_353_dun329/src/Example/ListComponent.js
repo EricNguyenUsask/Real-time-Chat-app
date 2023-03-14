@@ -7,20 +7,21 @@ class ListComponent extends React.Component {
   };
 
   handleShowHide = () => {
-    // if (!this.state.showPosts) {
-    //   fetch("http://localhost:3000/posts", {
-    //     method: "GET",
-    //   })
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //       this.setState({ posts: data });
-    //     })
-    //     .catch((error) => {
-    //       console.error("Error fetching posts:", error);
-    //     });
-    // }
+    if (!this.state.showPosts) {
+      fetch("http://localhost:3000/posts", {
+        method: "GET",
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          this.setState({ posts: data });
+        })
+        .catch((error) => {
+          console.error("Error fetching posts:", error);
+        });
+    }
     this.setState({
       showPosts: !this.state.showPosts,
+
     });
   };
 
