@@ -37,7 +37,7 @@ app.get("/init", (req, res) => {
   });
 
   connection.query(
-    "CREATE TABLE IF NOT EXISTS LoginSystem (id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(255), password VARCHAR(255));",
+    "CREATE TABLE IF NOT EXISTS Login (id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(255), password VARCHAR(255));",
     (err, result) => {
       if (err) throw err;
       res.send("Database and table created successfully.");
@@ -53,7 +53,7 @@ app.post("/register", (req, res) => {
     return;
   }
 
-  const query = `INSERT INTO LoginSystem (username, password) VALUES ('${username}', '${password}')`;
+  const query = `INSERT INTO Login (username, password) VALUES ('${username}', '${password}')`;
 
   connection.query(query, (err, result) => {
     console.log(err);
@@ -71,14 +71,14 @@ app.post("/login", (req, res) => {
   const { username, password } = req.body;
 
   connection.query(
-    "SELECT * FROM LoginSystem WHERE username = ? AND password = ?",
+    "SELECT * FROM Login WHERE username = ? AND password = ?",
     [username, password],
     (err, result) => {
       if (err) {
         res.send({ err: err });
       }
 
-      if (result.legth > 0) {
+      if (result.length > 0) {
         res.send(result);
       } else {
         res.send({ message: "Wrong username/password combination!" });
