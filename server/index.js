@@ -49,11 +49,11 @@ app.post("/register", (req, res) => {
   const { username, password } = req.body;
 
   if (!username || !password) {
-    res.status(400).send("Topic and data are required.");
+    res.status(400).send("username and password are required.");
     return;
   }
 
-  const query = `INSERT INTO LoginSystem (topic, data) VALUES ('${username}', '${password}')`;
+  const query = `INSERT INTO LoginSystem (username, password) VALUES ('${username}', '${password}')`;
 
   connection.query(query, (err, result) => {
     console.log(err);
